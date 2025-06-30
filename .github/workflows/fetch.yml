@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Fetch repository list from karpathy organization
       run: |
-        curl -s https://api.github.com/karpathy/repos?per_page=100 | jq -r '.[].name' > repo_list.txt
+        curl -s https://api.github.com/users/karpathy/repos?per_page=100 | jq -r '.[].name' > repo_list.txt
 
     - name: Upload repo_list.txt
       uses: actions/upload-artifact@v4
